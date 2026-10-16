@@ -13,7 +13,6 @@ import {
   Search,
   Plus,
   ArrowUpRight,
-  ArrowRight,
   ChevronDown,
   Menu,
   X,
@@ -21,10 +20,12 @@ import {
   Command,
   LoaderCircle,
 } from "lucide-react";
-import { Context, useTrace, useScope } from "./context";
-import { Button, Badge, Status, PageHead, Empty, Modal, Loading } from "./ui";
+import { Context, useTrace, type ResearchJourney } from "./context";
+import { Overview } from "./overview";
+import { ResearchWalkthrough } from "./journey";
+import { Button, Badge, Empty, Modal, Loading } from "./ui";
 import type { Workspace } from "@/lib/types";
-import { sourceOf, interviewCount } from "@/lib/research";
+import { sourceOf } from "@/lib/research";
 import { Projects, ProjectDetail, ProjectForm } from "./projects";
 import { Interviews, InterviewDetail, ImportDialog } from "./interviews";
 import { Findings, InsightDetail } from "./findings";
@@ -46,6 +47,9 @@ const nav = [
   { id: "quality", label: "Evaluation & quality", icon: ShieldCheck },
 ];
 export default function TraceApp() {
+  const [journey, setJourney] = useState<ResearchJourney | null>(null);
+  const [walkthroughCompleted, setWalkthroughCompleted] = useState(false);
+  const [journeyLoaded, setJourneyLoaded] = useState(false);
   const [w, setW] = useState<Workspace | null>(null);
   const [error, setError] = useState("");
   const [route, setRoute] = useState("/overview");
@@ -62,6 +66,54 @@ export default function TraceApp() {
   const notify = useCallback((message: string, error = false) => {
     setToast({ message, error });
   }, []);
+  useEffect(() => {
+    try {
+      setWalkthroughCompleted(
+        localStorage.getItem("trace-walkthrough-completed-v1") === "true",
+      );
+      const saved = JSON.parse(
+        localStorage.getItem("trace-journey-v1") || "null",
+      );
+      if (
+        saved &&
+        typeof saved.insightId === "string" &&
+        typeof saved.startedAt === "string" &&
+        !Number.isNaN(Date.parse(saved.startedAt)) &&
+        typeof saved.sourceVisited === "boolean"
+      )
+        setJourney(saved);
+    } catch {
+      /* Storage can be unavailable in a private browser session. */
+    }
+    setJourneyLoaded(true);
+  }, []);
+  useEffect(() => {
+    if (!journeyLoaded) return;
+    try {
+      localStorage.setItem("trace-journey-v1", JSON.stringify(journey));
+    } catch {
+      /* Keep the walkthrough usable without persistence. */
+    }
+  }, [journey, journeyLoaded]);
+  useEffect(() => {
+    if (!w || !journey || journey.sourceVisited) return;
+    const segmentId = new URLSearchParams(route.split("?")[1]).get("segment");
+    const evidence = w.evidence.find(
+      (e) =>
+        e.segmentId === segmentId &&
+        w.insightLinks.some(
+          (l) => l.insightId === journey.insightId && l.evidenceId === e.id,
+        ),
+    );
+    if (
+      evidence &&
+      route.split("?")[0] ===
+        "/interviews/" + sourceOf(w, evidence).interview?.id
+    )
+      setJourney((current) =>
+        current ? { ...current, sourceVisited: true } : null,
+      );
+  }, [w, journey, route]);
   const reload = useCallback(async () => {
     const r = await fetch("/api/workspace", { cache: "no-store" });
     const data = (await r.json()) as Workspace & { error?: string };
@@ -118,7 +170,11 @@ export default function TraceApp() {
     const hash = () => {
       setRoute(decodeURI(location.hash.slice(1)) || "/overview");
       setMenu(false);
-      window.scrollTo(0, 0);
+      if (
+        new URLSearchParams(location.hash.split("?")[1]).get("guide") !==
+        "review"
+      )
+        window.scrollTo(0, 0);
     };
     hash();
     window.addEventListener("hashchange", hash);
@@ -145,11 +201,34 @@ export default function TraceApp() {
     location.hash = r;
     setRoute(r);
     setMenu(false);
-    window.scrollTo(0, 0);
+    if (new URLSearchParams(r.split("?")[1]).get("guide") !== "review")
+      window.scrollTo(0, 0);
   }, []);
   const changeProject = (id: string) => {
     setProjectId(id);
     localStorage.setItem("trace-project", id);
+  };
+  const startJourney = (insightId: string) => {
+    const insight = w?.insights.find((i) => i.id === insightId);
+    if (!insight) return;
+    changeProject(insight.projectId);
+    setJourney({
+      insightId,
+      startedAt: new Date().toISOString(),
+      sourceVisited: false,
+    });
+    go("/insights/" + insightId);
+  };
+  const endJourney = (completed = false) => {
+    setJourney(null);
+    if (completed) {
+      setWalkthroughCompleted(true);
+      try {
+        localStorage.setItem("trace-walkthrough-completed-v1", "true");
+      } catch {
+        /* Completion still applies for this session. */
+      }
+    }
   };
   const act = async (action: string, data?: unknown, id?: string) => {
     if (busy) return null;
@@ -215,6 +294,10 @@ export default function TraceApp() {
         route,
         go,
         busy,
+        journey,
+        walkthroughCompleted,
+        startJourney,
+        endJourney,
         notify,
         act,
       }}
@@ -393,6 +476,7 @@ export default function TraceApp() {
             id="main-content"
             className={`main-content ${active === "interviews" && id ? "reader-content" : ""}`}
           >
+            <ResearchWalkthrough />
             {!w.projects.length ? (
               <div className="welcome">
                 <div className="eyebrow">WELCOME TO TRACE</div>
@@ -402,9 +486,9 @@ export default function TraceApp() {
                   with a trace.
                 </h1>
                 <p>
-                  Turn conversations into evidence, insights, and product
-                  opportunities. Start with twelve synthetic fintech interviews
-                  or create your own study.
+                  Follow a finding to its original conversation, review the
+                  evidence and create a product opportunity. Try a prepared
+                  study with twelve synthetic interviews, or start your own.
                 </p>
                 <div className="welcome-actions">
                   <Button
@@ -417,7 +501,7 @@ export default function TraceApp() {
                     ) : (
                       <ScanLine size={17} />
                     )}{" "}
-                    Load synthetic workspace
+                    Try the example study
                   </Button>
                   <Button onClick={() => setModal("project")}>
                     <Plus size={16} /> Create a study
@@ -502,326 +586,6 @@ export default function TraceApp() {
       {modal === "project" && <ProjectForm onClose={() => setModal("")} />}{" "}
       {modal === "import" && <ImportDialog onClose={() => setModal("")} />}
     </Context.Provider>
-  );
-}
-function Overview({
-  openImport,
-  newProject,
-}: {
-  openImport: () => void;
-  newProject: () => void;
-}) {
-  const { w, go, act, projectId, busy } = useTrace();
-  const scope = useScope();
-  const project = scope.projects[0];
-  const interviewIds = new Set(scope.interviews.map((i) => i.id));
-  const evidence = w.evidence.filter((e) =>
-    interviewIds.has(sourceOf(w, e).interview?.id ?? ""),
-  );
-  const done = scope.interviews.filter(
-    (i) => i.analysisStatus === "Demo analyzed",
-  ).length;
-  const verified = scope.insights.filter((i) => i.status === "Verified").length;
-  const participants = new Set(scope.interviews.map((i) => i.participantId));
-  const segments = [
-    ...new Set(
-      scope.interviews.map(
-        (i) => w.participants.find((p) => p.id === i.participantId)?.segment,
-      ),
-    ),
-  ].filter(Boolean) as string[];
-  const themeEvidence = (tid: string) =>
-    evidence.filter((e) => e.themeId === tid);
-  const latest = scope.insights
-    .filter((i) => i.status !== "Rejected")
-    .slice(0, 3);
-  const activities = [
-    ...w.reviews,
-    ...scope.runs.map((r) => ({
-      id: r.id,
-      entityId: r.projectId,
-      action: r.mode,
-      note: r.detail,
-      createdAt: r.createdAt,
-    })),
-  ]
-    .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
-    .slice(0, 4);
-  return (
-    <>
-      <PageHead
-        eyebrow="YOUR RESEARCH, CONNECTED"
-        title="Research overview"
-        description="A clearer picture of what your customers are telling you."
-        actions={
-          <>
-            <Button onClick={newProject}>
-              <Plus size={15} /> New study
-            </Button>
-            <Button variant="primary" onClick={openImport}>
-              <Plus size={16} /> Import interviews
-            </Button>
-          </>
-        }
-      />
-      <div className="metrics">
-        {[
-          {
-            label: "Research studies",
-            n: scope.projects.length,
-            sub: "Research in your workspace",
-            path: "/projects",
-          },
-          {
-            label: "Interviews",
-            n: scope.interviews.length,
-            sub: `${participants.size} distinct participants`,
-            path: "/interviews",
-          },
-          {
-            label: "Research themes",
-            n: scope.themes.length,
-            sub: `${evidence.length} source-linked excerpts`,
-            path: "/findings",
-          },
-          {
-            label: "Verified insights",
-            n: verified,
-            sub: `of ${scope.insights.length} total findings`,
-            path: "/findings",
-          },
-          {
-            label: "Opportunities",
-            n: scope.opportunities.length,
-            sub: `${scope.opportunities.filter((o) => o.status === "Discovery").length} awaiting review`,
-            path: "/opportunities",
-          },
-        ].map((m) => (
-          <button className="metric" key={m.label} onClick={() => go(m.path)}>
-            <div>
-              {m.label}
-              <ArrowUpRight size={14} />
-            </div>
-            <strong>{String(m.n).padStart(2, "0")}</strong>
-            <small>{m.sub}</small>
-          </button>
-        ))}
-      </div>
-      <div className="overview-grid">
-        <section className="study-feature">
-          <div className="study-feature-top">
-            <Badge tone="indigo">ACTIVE RESEARCH</Badge>
-            <span className="quiet">
-              {project?.methodology.includes("synthetic")
-                ? "Synthetic demo study"
-                : "Research study"}
-            </span>
-          </div>
-          <h2>
-            {project?.name ?? "Your next research study"}
-            <br />
-            <span>
-              {project?.id === "fintech-onboarding"
-                ? "Understanding why new users drop off"
-                : ""}
-            </span>
-          </h2>
-          <p>
-            {project?.objective ??
-              "Add a project to begin collecting research."}
-          </p>
-          <div className="study-progress">
-            <div>
-              <span>Demo analysis coverage</span>
-              <strong>
-                {done} / {scope.interviews.length} interviews
-              </strong>
-            </div>
-            <div className="progress-track">
-              <span
-                style={{
-                  width: `${scope.interviews.length ? (done / scope.interviews.length) * 100 : 0}%`,
-                }}
-              />
-            </div>
-            <small>
-              Precomputed findings · Imported interviews need manual coding
-            </small>
-          </div>
-          <div className="study-feature-bottom">
-            <div className="avatar-stack">
-              {scope.interviews.slice(0, 4).map((i) => (
-                <span className="avatar small" key={i.id}>
-                  {
-                    w.participants.find((p) => p.id === i.participantId)
-                      ?.identifier
-                  }
-                </span>
-              ))}
-              <small>{participants.size} participants</small>
-            </div>
-            <Button variant="primary" onClick={() => go("/findings")}>
-              Explore findings <ArrowRight size={15} />
-            </Button>
-          </div>
-        </section>
-        <section className="coverage-panel">
-          <div className="panel-heading">
-            <h2>Research coverage</h2>
-            <span className="quiet">n = {scope.interviews.length}</span>
-          </div>
-          <p>
-            Different experiences.
-            <br />A more complete conversation.
-          </p>
-          <div className="coverage-list">
-            {segments.map((s, n) => {
-              const count = scope.interviews.filter(
-                (i) =>
-                  w.participants.find((p) => p.id === i.participantId)
-                    ?.segment === s,
-              ).length;
-              return (
-                <button
-                  key={s}
-                  onClick={() =>
-                    go("/interviews?segment=" + encodeURIComponent(s))
-                  }
-                >
-                  <div>
-                    <span>{s}</span>
-                    <strong>
-                      {count}
-                      <small> / {scope.interviews.length}</small>
-                    </strong>
-                  </div>
-                  <div className="coverage-track">
-                    <span
-                      className={"coverage-color-" + (n % 3)}
-                      style={{
-                        width: `${(count / scope.interviews.length) * 100}%`,
-                      }}
-                    />
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-          <small className="coverage-caution">
-            Interview counts describe this sample, not population prevalence.
-          </small>
-        </section>
-      </div>
-      <div className="section-heading">
-        <div>
-          <span className="eyebrow">PATTERNS WORTH A CLOSER LOOK</span>
-          <h2>Emerging themes</h2>
-        </div>
-        <Button variant="ghost" onClick={() => go("/findings")}>
-          All themes <ArrowRight size={15} />
-        </Button>
-      </div>
-      <div className="theme-overview">
-        {scope.themes.slice(0, 3).map((t, n) => {
-          const es = themeEvidence(t.id);
-          const insight = scope.insights.find((i) => i.themeId === t.id);
-          return (
-            <button
-              className="theme-feature"
-              key={t.id}
-              onClick={() =>
-                go(insight ? "/insights/" + insight.id : "/findings")
-              }
-            >
-              <div className="theme-feature-top">
-                <span className="theme-index">0{n + 1}</span>
-                <Status status={t.status} />
-              </div>
-              <h3>{t.title}</h3>
-              <p>{t.explanation}</p>
-              <div className="theme-feature-foot">
-                <span>
-                  {interviewCount(w, es)} interviews · {es.length} excerpts
-                </span>
-                <ArrowUpRight size={18} />
-              </div>
-            </button>
-          );
-        })}
-      </div>
-      <div className="overview-bottom">
-        <section>
-          <div className="panel-heading">
-            <h2>Ready for your review</h2>
-            <Badge>
-              {scope.insights.filter((i) => i.status === "Under Review").length}{" "}
-              open
-            </Badge>
-          </div>
-          {latest.map((i) => (
-            <button
-              key={i.id}
-              className="finding-row"
-              onClick={() => go("/insights/" + i.id)}
-            >
-              <span className="finding-icon">
-                <Layers size={17} />
-              </span>
-              <span>
-                <strong>{i.title}</strong>
-                <small>
-                  {w.insightLinks.filter((l) => l.insightId === i.id).length}{" "}
-                  linked excerpts · {i.provenance}
-                </small>
-              </span>
-              <ArrowUpRight size={16} />
-            </button>
-          ))}
-        </section>
-        <section>
-          <div className="panel-heading">
-            <h2>Workspace activity</h2>
-            <Activity size={16} />
-          </div>
-          {activities.map((a) => (
-            <button
-              key={a.id}
-              className="activity-row"
-              onClick={() => {
-                if (w.insights.some((i) => i.id === a.entityId))
-                  go("/insights/" + a.entityId);
-                else if (w.interviews.some((i) => i.id === a.entityId))
-                  go("/interviews/" + a.entityId);
-                else go("/quality");
-              }}
-            >
-              <span className="activity-dot" />
-              <span>
-                <strong>{a.action}</strong>
-                <small>{a.note || "Research workspace updated"}</small>
-              </span>
-              <time>{a.createdAt.slice(5, 10)}</time>
-            </button>
-          ))}
-        </section>
-      </div>
-      <div className="evidence-principle">
-        <ShieldCheck size={19} />
-        <span>
-          <strong>Every insight has a source.</strong> Follow a finding all the
-          way back to the original conversation.
-        </span>
-        <Button
-          variant="ghost"
-          disabled={busy || !project}
-          onClick={() =>
-            act("demo.validate", { projectId: projectId || project?.id })
-          }
-        >
-          Validate sources <ArrowUpRight size={14} />
-        </Button>
-      </div>
-    </>
   );
 }
 function SearchDialog({ onClose }: { onClose: () => void }) {

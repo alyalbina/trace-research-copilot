@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./product-refinements.css";
 
 export const metadata: Metadata = {
   title: "TRACE — AI Research Copilot",

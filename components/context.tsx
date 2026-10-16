@@ -1,6 +1,11 @@
 "use client";
 import { createContext, useContext } from "react";
 import type { Workspace } from "@/lib/types";
+export interface ResearchJourney {
+  insightId: string;
+  startedAt: string;
+  sourceVisited: boolean;
+}
 export interface TraceContext {
   w: Workspace;
   projectId: string;
@@ -8,6 +13,10 @@ export interface TraceContext {
   route: string;
   go: (route: string) => void;
   busy: boolean;
+  journey: ResearchJourney | null;
+  walkthroughCompleted: boolean;
+  startJourney: (insightId: string) => void;
+  endJourney: (completed?: boolean) => void;
   notify: (message: string, error?: boolean) => void;
   act: (
     action: string,

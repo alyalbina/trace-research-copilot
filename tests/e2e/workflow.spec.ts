@@ -1,9 +1,81 @@
 import { test, expect } from "@playwright/test";
-test.beforeEach(async ({request}) => {
-  const response=await request.get('/api/workspace');
+test.beforeEach(async ({ request }) => {
+  const response = await request.get("/api/workspace");
   expect(response.ok()).toBe(true);
-  const workspace=await response.json();
-  if(!workspace.projects.length){const seeded=await request.post('/api/workspace',{data:{action:'seed'}});expect(seeded.ok()).toBe(true);}
+  const workspace = await response.json();
+  if (!workspace.projects.length) {
+    const seeded = await request.post("/api/workspace", {
+      data: { action: "seed" },
+    });
+    expect(seeded.ok()).toBe(true);
+  }
+});
+test("guided first experience follows a source, survives reload and completes after saving an opportunity", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Start walkthrough", exact: true })
+    .click();
+  const guide = page.getByRole("region", {
+    name: "Guided research walkthrough",
+  });
+  await expect(guide).toContainText("STEP 1 OF 3");
+  await guide.getByRole("button", { name: "Open source quote" }).click();
+  await expect(page.locator(".transcript-segment.focused mark")).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Continue to review" }),
+  ).toBeVisible();
+  await page.reload();
+  await expect(guide).toContainText("STEP 2 OF 3");
+  await page.getByRole("button", { name: "Continue to review" }).click();
+  await expect(
+    page.getByRole("button", { name: "Verify insight", exact: true }),
+  ).toBeInViewport();
+  await page
+    .getByRole("button", { name: "Verify insight", exact: true })
+    .click();
+  await expect(guide).toContainText("STEP 3 OF 3");
+  await guide
+    .getByRole("button", { name: "Create an opportunity", exact: true })
+    .click();
+  await page
+    .getByRole("dialog")
+    .getByLabel("Opportunity title")
+    .fill("Walkthrough — Clear receipt confirmation");
+  await page
+    .getByRole("dialog")
+    .getByLabel("Validation plan")
+    .fill(
+      "Test whether participants can explain the next step after document submission.",
+    );
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: "Save opportunity" })
+    .click();
+  await expect(
+    page.getByRole("heading", {
+      name: "Walkthrough — Clear receipt confirmation",
+      exact: true,
+      level: 1,
+    }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Close dialog", exact: true }).click();
+  await expect(guide).toContainText("WALKTHROUGH COMPLETE");
+  await guide.getByRole("button", { name: "Finish walkthrough" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Research overview" }),
+  ).toBeVisible();
+  await page.reload();
+  await expect(guide).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Replay walkthrough" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Start walkthrough", exact: true }),
+  ).toHaveCount(0);
 });
 test("signature experience: evidence, counter-evidence, review, opportunity, export and persistence", async ({
   page,
@@ -235,7 +307,7 @@ test("responsive navigation and representative screens stay within viewport", as
 test("search opens an exact source, retrieval refuses unsupported questions, and screenshots are produced", async ({
   page,
 }) => {
-  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.setViewportSize({ width: 1440, height: 1060 });
   await page.goto("/");
   await page
@@ -261,7 +333,7 @@ test("search opens an exact source, retrieval refuses unsupported questions, and
   await expect(
     page.getByRole("heading", { name: "Research overview" }),
   ).toBeVisible();
-  await page.evaluate(()=>window.scrollTo(0,0));
+  await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({
     path: "docs/screenshots/overview-desktop.png",
     fullPage: true,
@@ -287,9 +359,19 @@ test("search opens an exact source, retrieval refuses unsupported questions, and
   await expect(
     page.getByRole("heading", { name: "Research overview" }),
   ).toBeVisible();
-  await page.evaluate(()=>window.scrollTo(0,0));
+  await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({
     path: "docs/screenshots/overview-mobile.png",
     fullPage: true,
+  });
+  await page
+    .getByRole("button", { name: "Start walkthrough", exact: true })
+    .click();
+  await expect(
+    page.getByRole("region", { name: "Guided research walkthrough" }),
+  ).toContainText("STEP 1 OF 3");
+  await page.screenshot({
+    path: "docs/screenshots/walkthrough-mobile.png",
+    fullPage: false,
   });
 });

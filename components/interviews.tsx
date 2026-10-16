@@ -5,6 +5,7 @@ import {
   Search,
   ArrowUpRight,
   ArrowLeft,
+  ArrowRight,
   Quote,
   Upload,
   FileText,
@@ -597,7 +598,7 @@ function MetadataForm({
   );
 }
 export function InterviewDetail({ id }: { id: string }) {
-  const { w, go, route, act, busy } = useTrace();
+  const { w, go, route, act, busy, journey } = useTrace();
   const interview = w.interviews.find((i) => i.id === id);
   const [search, setSearch] = useState("");
   const [edit, setEdit] = useState(false);
@@ -617,15 +618,13 @@ export function InterviewDetail({ id }: { id: string }) {
     if (segmentId) {
       const t = setTimeout(
         () =>
-          document
-            .getElementById(segmentId)
-            ?.scrollIntoView({
-              behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
-                .matches
-                ? "instant"
-                : "smooth",
-              block: "center",
-            }),
+          document.getElementById(segmentId)?.scrollIntoView({
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+              .matches
+              ? "instant"
+              : "smooth",
+            block: "center",
+          }),
         120,
       );
       return () => clearTimeout(t);
@@ -803,6 +802,19 @@ export function InterviewDetail({ id }: { id: string }) {
                 )}
               </div>
               <p>{renderText(s)}</p>
+              {s.id === segmentId && journey?.insightId === insightId && (
+                <div className="source-journey-next">
+                  <p>
+                    Read the context above and below this quote, then compare it
+                    with the finding.
+                  </p>
+                  <Button
+                    onClick={() => go(`/insights/${insightId}?guide=review`)}
+                  >
+                    Continue to review <ArrowRight size={16} />
+                  </Button>
+                </div>
+              )}
               {evidence
                 .filter((e) => e.segmentId === s.id)
                 .map((e) => (

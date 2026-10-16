@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Plus,
   ArrowUpRight,
@@ -650,10 +650,26 @@ export function Findings() {
   );
 }
 export function InsightDetail({ id }: { id: string }) {
-  const { w, go, act, busy } = useTrace();
+  const { w, go, act, busy, route, journey } = useTrace();
   const i = w.insights.find((i) => i.id === id);
   const [modal, setModal] = useState("");
   const [note, setNote] = useState("");
+  const guide = new URLSearchParams(route.split("?")[1]).get("guide");
+  useEffect(() => {
+    if (!i || !guide) return;
+    if (guide === "opportunity" && i.status === "Verified") {
+      setModal("opportunity");
+      // Consume this navigation intent so closing the dialog does not reopen it.
+      go("/insights/" + id);
+    } else if (guide === "review") {
+      document
+        .getElementById("researcher-review")
+        ?.scrollIntoView({ block: "center" });
+      document
+        .querySelector<HTMLButtonElement>("#researcher-review .btn")
+        ?.focus({ preventScroll: true });
+    }
+  }, [guide, id, i?.status, go]);
   if (!i)
     return (
       <Empty
@@ -827,7 +843,7 @@ export function InsightDetail({ id }: { id: string }) {
           )}
         </div>
         <aside className="insight-aside">
-          <section className="review-panel">
+          <section className="review-panel" id="researcher-review">
             <div className="panel-heading">
               <h2>Researcher review</h2>
               <ShieldCheck size={17} />
@@ -888,13 +904,20 @@ export function InsightDetail({ id }: { id: string }) {
               </Button>
             </div>
             {i.status === "Verified" && (
-              <Button
-                disabled={archived}
-                onClick={() => setModal("opportunity")}
-              >
-                <Lightbulb size={14} />
-                Create opportunity
-              </Button>
+              <>
+                {journey?.insightId === i.id && (
+                  <p className="help-text">
+                    Next: turn this reviewed finding into a hypothesis you can
+                    test.
+                  </p>
+                )}
+                <Button
+                  disabled={archived}
+                  onClick={() => setModal("opportunity")}
+                >
+                  <Lightbulb size={14} /> Create opportunity
+                </Button>
+              </>
             )}
           </section>
           <section className="trace-chain">

@@ -24,7 +24,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: Inter, "Segoe UI", Arial, sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -92,13 +92,13 @@ h1 {
   font-weight: 600;
 }
 h2 {
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: -0.25px;
   font-weight: 600;
   line-height: 1.4;
 }
 h3 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 p {
@@ -111,7 +111,7 @@ strong {
   font-weight: 600;
 }
 small {
-  font-size: 11px;
+  font-size: 13px;
 }
 svg {
   flex-shrink: 0;
@@ -164,7 +164,7 @@ legend {
   white-space: nowrap;
 }
 .eyebrow {
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 1.5px;
   color: var(--muted);
   font-weight: 600;
@@ -175,12 +175,12 @@ legend {
   align-items: center;
   justify-content: center;
   gap: 7px;
-  min-height: 36px;
+  min-height: 42px;
   padding: 8px 12px;
   border: 1px solid #dedfdd;
   border-radius: 6px;
   background: var(--paper);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   transition:
     background 0.14s,
@@ -220,7 +220,7 @@ legend {
   gap: 4px;
   align-items: center;
   vertical-align: middle;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
   padding: 3px 7px;
   border-radius: 4px;
@@ -251,7 +251,7 @@ legend {
   height: 32px;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   flex-shrink: 0;
   border-radius: 50%;
@@ -262,12 +262,12 @@ legend {
 .avatar.small {
   width: 27px;
   height: 27px;
-  font-size: 9px;
+  font-size: 12px;
 }
 .avatar.tiny {
   width: 26px;
   height: 26px;
-  font-size: 9px;
+  font-size: 12px;
 }
 .live-dot {
   width: 5px;
@@ -282,7 +282,7 @@ legend {
   display: flex;
 }
 .sidebar {
-  width: 228px;
+  width: 252px;
   background: var(--nav);
   color: #bbc0c7;
   position: fixed;
@@ -290,7 +290,8 @@ legend {
   z-index: 30;
   display: flex;
   flex-direction: column;
-  padding: 26px 16px 13px;
+  padding: 22px 16px 13px;
+  overflow-y: auto;
   border-right: 1px solid #15191e;
 }
 .brand {
@@ -320,7 +321,7 @@ legend {
   color: #a1af8d;
 }
 .workspace-label {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1.5px;
   color: #9ca6b3;
   margin: 0 10px 9px;
@@ -336,12 +337,12 @@ legend {
   align-items: center;
   width: 100%;
   text-align: left;
-  font-size: 11px;
+  font-size: 13px;
 }
 .workspace-switch small {
   display: block;
   color: #a0a9b5;
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 1px;
 }
 .workspace-switch > svg {
@@ -355,7 +356,7 @@ legend {
   border-radius: 5px;
   display: grid;
   place-items: center;
-  font-size: 13px;
+  font-size: 15px;
 }
 .command-search {
   display: flex;
@@ -367,11 +368,11 @@ legend {
   padding: 21px 10px 20px;
   color: #a7afbb;
   text-align: left;
-  font-size: 11px;
+  font-size: 13px;
 }
 .command-search kbd {
   margin-left: auto;
-  font-size: 9px;
+  font-size: 12px;
   border: 1px solid #454c56;
   padding: 1px 4px;
   border-radius: 3px;
@@ -392,7 +393,7 @@ legend {
   background: none;
   color: #b0b7c1;
   text-align: left;
-  font-size: 11.5px;
+  font-size: 14px;
   padding: 11px;
   border-radius: 5px;
 }
@@ -411,7 +412,7 @@ legend {
 }
 .nav-count {
   margin-left: auto;
-  font-size: 9px;
+  font-size: 12px;
   border-radius: 3px;
   background: #4c5261;
   padding: 1px 5px;
@@ -423,7 +424,7 @@ legend {
   padding-top: 19px;
 }
 .section-label {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1.35px;
   padding: 0 10px;
   color: #9ba6b6;
@@ -446,7 +447,7 @@ legend {
   color: #b4bdc7;
   padding: 9px 10px;
   text-align: left;
-  font-size: 11px;
+  font-size: 13px;
   align-items: center;
   line-height: 1.5;
 }
@@ -470,7 +471,7 @@ legend {
   border-radius: 6px;
   padding: 13px 12px;
   margin: 0 2px 17px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .demo-note strong {
   color: #c9d6c6;
@@ -480,7 +481,7 @@ legend {
 .demo-note p {
   margin-top: 5px;
   color: #a3b1ad;
-  font-size: 10px;
+  font-size: 12px;
   padding-left: 12px;
   line-height: 1.65;
 }
@@ -495,7 +496,7 @@ legend {
   gap: 9px;
   align-items: center;
   color: #d6d8dc;
-  font-size: 10px;
+  font-size: 12px;
 }
 .profile .avatar {
   background: #59614e;
@@ -504,12 +505,12 @@ legend {
 }
 .profile small {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   color: #9ca7b4;
 }
 .workspace-main {
-  width: calc(100% - 228px);
-  margin-left: 228px;
+  width: calc(100% - 252px);
+  margin-left: 252px;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -537,12 +538,12 @@ legend {
   min-width: 0;
 }
 .topbar-section {
-  font-size: 11px;
+  font-size: 13px;
   color: #69737d;
 }
 .slash {
   color: #aeb6b6;
-  font-size: 14px;
+  font-size: 16px;
 }
 .project-select {
   min-width: 0;
@@ -551,7 +552,7 @@ legend {
   border: 0;
   padding: 5px 22px 5px 0;
   max-width: 260px;
-  font-size: 11px;
+  font-size: 13px;
   background: transparent;
   font-weight: 500;
 }
@@ -559,7 +560,7 @@ legend {
   gap: 17px;
 }
 .topbar-right .badge {
-  font-size: 9px;
+  font-size: 12px;
   padding: 4px 8px;
   gap: 6px;
 }
@@ -590,7 +591,7 @@ legend {
 }
 .page-head p {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 10px;
   max-width: 730px;
 }
@@ -607,7 +608,7 @@ legend {
   justify-content: space-between;
   align-items: center;
   color: #778087;
-  font-size: 9px;
+  font-size: 12px;
   gap: 20px;
 }
 .app-footer > span:first-child {
@@ -643,7 +644,7 @@ legend {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   color: #697178;
   margin-bottom: 11px;
@@ -661,7 +662,7 @@ legend {
   margin-bottom: 5px;
 }
 .metric > small {
-  font-size: 9px;
+  font-size: 12px;
   color: #757e82;
 }
 .overview-grid {
@@ -701,13 +702,13 @@ legend {
   margin-bottom: 24px;
 }
 .study-feature-top .badge {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1.1px;
   background: #e5e8dc;
   color: #606a56;
 }
 .study-feature-top > .quiet {
-  font-size: 9px;
+  font-size: 12px;
   color: #6e7864;
 }
 .study-feature h2 {
@@ -723,7 +724,7 @@ legend {
 .study-feature > p {
   margin-top: 13px;
   color: #687260;
-  font-size: 11px;
+  font-size: 13px;
   max-width: 470px;
   line-height: 1.8;
 }
@@ -734,11 +735,11 @@ legend {
   display: flex;
   justify-content: space-between;
   color: #67715f;
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 8px;
 }
 .study-progress strong {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   color: #535d4f;
 }
@@ -757,7 +758,7 @@ legend {
 .study-progress > small {
   display: block;
   margin-top: 8px;
-  font-size: 9px;
+  font-size: 12px;
   color: #737d68;
 }
 .study-feature-bottom {
@@ -785,11 +786,11 @@ legend {
 }
 .avatar-stack small {
   margin-left: 8px;
-  font-size: 9px;
+  font-size: 12px;
   color: #6e7962;
 }
 .study-feature-bottom .btn {
-  font-size: 10px;
+  font-size: 12px;
   min-height: 33px;
   padding: 8px 10px;
 }
@@ -807,17 +808,17 @@ legend {
   margin-bottom: 18px;
 }
 .panel-heading h2 {
-  font-size: 13px;
+  font-size: 15px;
 }
 .panel-heading > .quiet {
-  font-size: 9px;
+  font-size: 12px;
 }
 .panel-heading > svg {
   color: #849192;
 }
 .coverage-panel > p {
   color: #778380;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.65;
   margin-top: -7px;
 }
@@ -836,20 +837,20 @@ legend {
 .coverage-list > button > div:first-child {
   display: flex;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.3;
   margin-bottom: 5px;
   color: #636a70;
   gap: 8px;
 }
 .coverage-list strong {
-  font-size: 10px;
+  font-size: 12px;
   color: #616a65;
   font-weight: 500;
   white-space: nowrap;
 }
 .coverage-list strong > small {
-  font-size: 9px;
+  font-size: 12px;
   color: #77827a;
   font-weight: 400;
 }
@@ -877,7 +878,7 @@ legend {
   display: block;
   border-top: 1px solid #eff0ec;
   padding-top: 12px;
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.6;
   color: #747e76;
 }
@@ -889,18 +890,18 @@ legend {
   margin: 28px 0 16px;
 }
 .section-heading h2 {
-  font-size: 17px;
+  font-size: 18px;
   display: flex;
   gap: 8px;
   align-items: center;
 }
 .section-heading .eyebrow {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1.3px;
   margin-bottom: 5px;
 }
 .section-heading h2 > span {
-  font-size: 11px;
+  font-size: 13px;
   min-width: 19px;
   background: #eeefeb;
   color: #66726c;
@@ -910,7 +911,7 @@ legend {
   text-align: center;
 }
 .section-heading > .quiet {
-  font-size: 10px;
+  font-size: 12px;
 }
 .theme-overview {
   display: grid;
@@ -940,22 +941,22 @@ legend {
 }
 .theme-index {
   font-family: Consolas, monospace;
-  font-size: 10px;
+  font-size: 12px;
   color: #78866a;
   letter-spacing: 1px;
 }
 .theme-feature-top .badge {
-  font-size: 8px;
+  font-size: 12px;
 }
 .theme-feature h3 {
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: -0.25px;
   font-weight: 550;
   margin-bottom: 9px;
 }
 .theme-feature > p {
   color: #717c7c;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.8;
   min-height: 36px;
 }
@@ -967,7 +968,7 @@ legend {
   padding-top: 12px;
   border-top: 1px solid #f0f0ed;
   color: #707d6e;
-  font-size: 9px;
+  font-size: 12px;
 }
 .theme-feature-foot svg {
   color: #80926e;
@@ -987,7 +988,7 @@ legend {
   margin-bottom: 13px;
 }
 .overview-bottom .panel-heading .badge {
-  font-size: 8px;
+  font-size: 12px;
 }
 .finding-row {
   display: flex;
@@ -1015,13 +1016,13 @@ legend {
   min-width: 0;
 }
 .finding-row strong {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
 }
 .finding-row small {
   display: block;
   color: #778180;
-  font-size: 8px;
+  font-size: 12px;
   margin-top: 3px;
 }
 .finding-row > svg {
@@ -1051,12 +1052,12 @@ legend {
   min-width: 0;
 }
 .activity-row strong {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
 }
 .activity-row small {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.5;
   color: #78817e;
   overflow: hidden;
@@ -1066,7 +1067,7 @@ legend {
   margin-top: 3px;
 }
 .activity-row time {
-  font-size: 8px;
+  font-size: 12px;
   color: #78827a;
   white-space: nowrap;
   padding-top: 3px;
@@ -1080,7 +1081,7 @@ legend {
   background: #f1f3ed;
   border: 1px solid #e5e9df;
   border-radius: 6px;
-  font-size: 10px;
+  font-size: 12px;
   color: #6b7960;
 }
 .evidence-principle > svg {
@@ -1092,10 +1093,10 @@ legend {
 }
 .evidence-principle .btn {
   margin-left: auto;
-  font-size: 10px;
+  font-size: 12px;
 }
 .evidence-principle.compact {
-  font-size: 12px;
+  font-size: 14px;
 }
 .table-wrap {
   border: 1px solid var(--line);
@@ -1107,7 +1108,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 11px;
+  font-size: 13px;
 }
 th {
   font-weight: 500;
@@ -1116,7 +1117,7 @@ th {
   padding: 12px 17px;
   border-bottom: 1px solid var(--line);
   white-space: nowrap;
-  font-size: 10px;
+  font-size: 12px;
 }
 td {
   padding: 15px 17px;
@@ -1132,7 +1133,7 @@ tbody tr:hover {
 }
 td select {
   padding: 6px 8px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .text-link {
   display: inline-flex;
@@ -1159,7 +1160,7 @@ td select {
 .filter-bar > input,
 .filter-bar > select {
   padding: 8px 10px;
-  font-size: 11px;
+  font-size: 13px;
   max-width: 220px;
   min-width: 120px;
 }
@@ -1169,7 +1170,7 @@ td select {
 }
 .filter-bar > .quiet {
   margin-left: auto;
-  font-size: 10px;
+  font-size: 12px;
 }
 .search-input {
   display: flex;
@@ -1190,7 +1191,7 @@ td select {
   padding: 9px 0;
   width: 100%;
   min-width: 0;
-  font-size: 11px;
+  font-size: 13px;
 }
 .search-input.large {
   min-width: 0;
@@ -1198,10 +1199,10 @@ td select {
 }
 .search-input.large input {
   padding: 14px 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 .search-input kbd {
-  font-size: 9px;
+  font-size: 12px;
   color: #75806f;
   border: 1px solid var(--line);
   padding: 2px 5px;
@@ -1212,7 +1213,7 @@ td select {
   justify-content: space-between;
   align-items: center;
   color: #737f7b;
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 13px;
 }
 .table-meta > span:last-child {
@@ -1241,7 +1242,7 @@ td select {
   margin-bottom: 10px;
 }
 .empty p {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   margin-bottom: 20px;
 }
@@ -1321,7 +1322,7 @@ td select {
   z-index: 2;
 }
 .dialog > header h2 {
-  font-size: 16px;
+  font-size: 18px;
 }
 .dialog > header .btn {
   padding: 5px;
@@ -1352,20 +1353,20 @@ td select {
   min-width: 0;
 }
 .field > label {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   color: #5a6169;
 }
 .field > small {
   color: #727e76;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.6;
 }
 .field input,
 .field select,
 .field textarea {
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
 }
 .form-grid {
   display: grid;
@@ -1386,11 +1387,11 @@ td select {
   flex-wrap: wrap;
 }
 .form-actions > .quiet {
-  font-size: 10px;
+  font-size: 12px;
   margin-right: auto;
 }
 .help-text {
-  font-size: 11px;
+  font-size: 13px;
   color: #758071;
   line-height: 1.8;
   margin: 14px 0;
@@ -1399,7 +1400,7 @@ td select {
   display: flex;
   gap: 7px;
   align-items: center;
-  font-size: 11px;
+  font-size: 13px;
   color: #6d7579;
 }
 .inline-check input {
@@ -1423,7 +1424,7 @@ td select {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 12px;
+  font-size: 14px;
 }
 .toast.error {
   background: #542c2a;
@@ -1450,7 +1451,7 @@ td select {
   align-items: center;
   gap: 6px;
   padding: 7px 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .command-results {
   margin-top: 15px;
@@ -1479,7 +1480,7 @@ td select {
 .command-results small {
   display: block;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.6px;
   margin-bottom: 3px;
@@ -1487,7 +1488,7 @@ td select {
 .command-results strong {
   font-weight: 500;
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1502,14 +1503,14 @@ td select {
   align-items: center;
   padding-top: 17px;
   color: #788570;
-  font-size: 10px;
+  font-size: 12px;
 }
 .breadcrumb {
   display: flex;
   gap: 7px;
   align-items: center;
   color: #7e8b7a;
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 22px;
   flex-wrap: wrap;
 }
@@ -1522,7 +1523,7 @@ td select {
   background: none;
   border: 0;
   padding: 0;
-  font-size: 10px;
+  font-size: 12px;
   color: #75846e;
 }
 .breadcrumb button:disabled {
@@ -1566,7 +1567,7 @@ td select {
 }
 .project-card > p {
   color: #74806e;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.8;
 }
 .project-meta {
@@ -1576,7 +1577,7 @@ td select {
   margin: 22px 0 11px;
   border-top: 1px solid #edeeea;
   padding-top: 16px;
-  font-size: 11px;
+  font-size: 13px;
   color: #728368;
 }
 .project-meta > span {
@@ -1588,7 +1589,7 @@ td select {
   margin-left: auto;
 }
 .project-card > small {
-  font-size: 9px;
+  font-size: 12px;
   color: #748566;
 }
 .study-detail-banner {
@@ -1600,7 +1601,7 @@ td select {
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--paper);
-  font-size: 11px;
+  font-size: 13px;
   color: #6b7b60;
   flex-wrap: wrap;
 }
@@ -1620,11 +1621,11 @@ td select {
 }
 .paper-section h3 {
   margin: 24px 0 9px;
-  font-size: 12px;
+  font-size: 14px;
   color: #4f5b60;
 }
 .paper-section p {
-  font-size: 12px;
+  font-size: 14px;
   color: #6b7963;
   line-height: 1.9;
   margin: 10px 0;
@@ -1633,7 +1634,7 @@ td select {
 .question-list {
   padding-left: 18px;
   color: #65765a;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.9;
   list-style: disc;
 }
@@ -1657,13 +1658,13 @@ td select {
   min-width: 0;
 }
 .detail-list-row strong {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
 }
 .detail-list-row small {
   display: block;
   color: #7c8875;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 4px;
 }
 .next-step {
@@ -1678,11 +1679,11 @@ td select {
 .next-step h3 {
   margin: 0;
   color: #64715a;
-  font-size: 12px;
+  font-size: 14px;
 }
 .next-step p {
   margin: 7px 0 0;
-  font-size: 11px;
+  font-size: 13px;
   color: #6f7e62;
   line-height: 1.7;
 }
@@ -1693,7 +1694,7 @@ td select {
   margin-top: 22px;
   color: #748466;
   align-items: center;
-  font-size: 9px;
+  font-size: 12px;
 }
 .import-intro {
   display: flex;
@@ -1712,10 +1713,10 @@ td select {
   flex-shrink: 0;
 }
 .import-intro strong {
-  font-size: 13px;
+  font-size: 15px;
 }
 .import-intro p {
-  font-size: 11px;
+  font-size: 13px;
   color: #72806a;
   margin-top: 3px;
 }
@@ -1736,11 +1737,11 @@ td select {
   padding: 20px;
 }
 .upload-zone strong {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
 }
 .upload-zone span {
-  font-size: 10px;
+  font-size: 12px;
   color: #738568;
 }
 .upload-zone input {
@@ -1752,11 +1753,11 @@ td select {
 }
 .transcript-input {
   font-family: Consolas, monospace;
-  font-size: 11px !important;
+  font-size: 13px !important;
   line-height: 1.8;
 }
 .csv-guide {
-  font-size: 11px;
+  font-size: 13px;
   color: #687b5c;
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -1770,11 +1771,11 @@ td select {
 }
 .csv-guide p {
   margin-top: 12px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .csv-guide .btn {
   margin-top: 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 .info-banner {
   display: flex;
@@ -1785,7 +1786,7 @@ td select {
   border-radius: 6px;
   padding: 15px 18px;
   color: #5d714d;
-  font-size: 11px;
+  font-size: 13px;
   margin-bottom: 22px;
   line-height: 1.7;
 }
@@ -1820,13 +1821,13 @@ td select {
 }
 .interview-title strong {
   display: block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   color: #38434a;
 }
 .interview-title small {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   color: #76846c;
   margin-top: 3px;
 }
@@ -1846,7 +1847,7 @@ td select {
   gap: 7px;
   border: 0;
   background: none;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--accent);
   padding: 0;
   margin-bottom: 18px;
@@ -1866,7 +1867,7 @@ td select {
   align-items: center;
   gap: 10px;
   color: #75856b;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 15px;
   flex-wrap: wrap;
 }
@@ -1874,7 +1875,7 @@ td select {
   color: #646f74;
 }
 .reader-meta .badge {
-  font-size: 9px;
+  font-size: 12px;
 }
 .reader-content {
   padding: 30px 28px;
@@ -1891,7 +1892,7 @@ td select {
   top: 92px;
 }
 .reader-section-label {
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: #77866b;
   display: flex;
@@ -1911,10 +1912,10 @@ td select {
   padding: 0 7px;
 }
 .transcript-nav .search-input input {
-  font-size: 10px;
+  font-size: 12px;
 }
 .search-count {
-  font-size: 9px;
+  font-size: 12px;
   color: #738663;
   display: block;
   margin-top: 9px;
@@ -1932,7 +1933,7 @@ td select {
   border: 0;
   text-align: left;
   width: 100%;
-  font-size: 10px;
+  font-size: 12px;
   padding: 12px 9px;
   line-height: 1.8;
   color: #748266;
@@ -1948,7 +1949,7 @@ td select {
 }
 .passage-nav > button > span:first-child {
   font-family: Consolas, monospace;
-  font-size: 9px;
+  font-size: 12px;
   color: #748868;
 }
 .passage-nav > button > span:nth-child(2) {
@@ -1971,7 +1972,7 @@ td select {
   color: #759063;
 }
 .reader-tip p {
-  font-size: 9px;
+  font-size: 12px;
   color: #6f835e;
   line-height: 1.9;
 }
@@ -1993,11 +1994,11 @@ td select {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 11px;
+  font-size: 13px;
   color: #647559;
 }
 .transcript-paper > header .badge {
-  font-size: 8px;
+  font-size: 12px;
 }
 .transcript-segment {
   padding: 23px 24px 21px;
@@ -2012,7 +2013,7 @@ td select {
   padding-bottom: 18px;
 }
 .transcript-segment.researcher p {
-  font-size: 11px;
+  font-size: 13px;
   color: #6f8063;
   line-height: 1.9;
 }
@@ -2025,7 +2026,7 @@ td select {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 10px;
   color: #678552;
   min-height: 20px;
@@ -2035,11 +2036,11 @@ td select {
 }
 .segment-heading small {
   margin-left: auto;
-  font-size: 9px;
+  font-size: 12px;
   color: #70895e;
 }
 .transcript-segment > p {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.95;
   color: #56636b;
   white-space: pre-wrap;
@@ -2053,7 +2054,7 @@ td select {
   border: 0;
   background: none;
   color: #678a4d;
-  font-size: 8px;
+  font-size: 12px;
   opacity: 0.5;
 }
 .transcript-segment:hover .save-passage,
@@ -2067,7 +2068,7 @@ td select {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 8px;
+  font-size: 12px;
   padding: 3px 7px;
   border-radius: 4px;
   margin-top: 12px;
@@ -2079,10 +2080,10 @@ td select {
   border-top: 1px solid #eff1eb;
   padding: 25px;
   color: #708d59;
-  font-size: 10px;
+  font-size: 12px;
 }
 .transcript-end small {
-  font-size: 9px;
+  font-size: 12px;
 }
 .connected-insight {
   background: #f2f3ec;
@@ -2094,13 +2095,13 @@ td select {
   width: 100%;
 }
 .connected-insight h3 {
-  font-size: 13px;
+  font-size: 15px;
   margin: 12px 0 9px;
   line-height: 1.6;
   color: #506048;
 }
 .connected-insight p {
-  font-size: 10px;
+  font-size: 12px;
   color: #6c7b5c;
   line-height: 1.8;
   display: -webkit-box;
@@ -2113,7 +2114,7 @@ td select {
   gap: 5px;
   align-items: center;
   color: #678453;
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 15px;
 }
 .findings-panel .quote-card {
@@ -2126,7 +2127,7 @@ td select {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 10px;
+  font-size: 12px;
   color: #647b51;
   padding: 8px 0;
   width: 100%;
@@ -2139,7 +2140,7 @@ td select {
   margin-bottom: 23px;
 }
 .tag-list .badge {
-  font-size: 8px;
+  font-size: 12px;
 }
 .tag-list button {
   background: none;
@@ -2151,12 +2152,12 @@ td select {
   color: #698652;
 }
 .reader-note {
-  font-size: 10px;
+  font-size: 12px;
   color: #6f7b67;
   line-height: 1.85;
 }
 .findings-panel > .btn {
-  font-size: 9px;
+  font-size: 12px;
   margin: 7px 0 18px;
 }
 .reader-validation {
@@ -2167,30 +2168,30 @@ td select {
   color: #698654;
 }
 .reader-validation p {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   margin-top: 8px;
 }
 .reader-validation small {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   color: #708560;
   margin: 7px 0 12px;
   line-height: 1.8;
 }
 .reader-validation .btn {
-  font-size: 9px;
+  font-size: 12px;
 }
 .reader-empty {
   color: #718d5d;
   margin: 20px 0 30px;
 }
 .reader-empty h3 {
-  font-size: 13px;
+  font-size: 15px;
   margin: 13px 0 9px;
 }
 .reader-empty p {
-  font-size: 10px;
+  font-size: 12px;
   color: #6f8062;
   margin-bottom: 15px;
 }
@@ -2209,7 +2210,7 @@ td select {
   border-radius: 8px;
   padding: 10px 15px;
   color: #687e5c;
-  font-size: 11px;
+  font-size: 13px;
   max-width: calc(100vw - 20px);
 }
 .evidence-preview {
@@ -2221,12 +2222,12 @@ td select {
 }
 .evidence-preview blockquote {
   margin: 10px 0 13px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.85;
   color: #566a4c;
 }
 .evidence-preview small {
-  font-size: 9px;
+  font-size: 12px;
 }
 .quote-card {
   display: block;
@@ -2250,7 +2251,7 @@ td select {
   align-items: center;
   justify-content: space-between;
   color: #6c8259;
-  font-size: 9px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.65px;
   margin-bottom: 13px;
@@ -2261,7 +2262,7 @@ td select {
   align-items: center;
 }
 .quote-card blockquote {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.85;
   font-weight: 400;
   color: #53634b;
@@ -2274,20 +2275,20 @@ td select {
   gap: 8px;
 }
 .quote-attribution strong {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   color: #60734f;
 }
 .quote-attribution small {
   display: block;
-  font-size: 8px;
+  font-size: 12px;
   color: #70875e;
   margin-top: 2px;
 }
 .source-id {
   margin-left: auto;
   font-family: Consolas, monospace;
-  font-size: 9px;
+  font-size: 12px;
   color: #6b8753;
 }
 .quote-card.contradictory {
@@ -2315,21 +2316,21 @@ td select {
   padding: 13px 14px;
 }
 .quote-card.compact .quote-label {
-  font-size: 7px;
+  font-size: 12px;
   margin-bottom: 9px;
 }
 .quote-card.compact blockquote {
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.9;
   margin-bottom: 12px;
 }
 .quote-card.compact .quote-attribution small {
-  font-size: 7px;
+  font-size: 12px;
 }
 .quote-card.compact .avatar {
   width: 22px;
   height: 22px;
-  font-size: 7px;
+  font-size: 12px;
 }
 .tabs {
   display: flex;
@@ -2347,7 +2348,7 @@ td select {
   padding: 12px 0 14px;
   color: #6e7f60;
   border-bottom: 2px solid transparent;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -2356,7 +2357,7 @@ td select {
   color: #4f52bb;
 }
 .tabs > button > span {
-  font-size: 9px;
+  font-size: 12px;
   background: #ecedf3;
   border-radius: 3px;
   padding: 0 5px;
@@ -2380,7 +2381,7 @@ td select {
 }
 .theme-row-heading .theme-index {
   padding-top: 3px;
-  font-size: 13px;
+  font-size: 15px;
 }
 .theme-row-heading > div {
   flex: 1;
@@ -2391,7 +2392,7 @@ td select {
 }
 .theme-row-heading p {
   color: #6c7c60;
-  font-size: 12px;
+  font-size: 14px;
 }
 .theme-row-heading > .btn {
   padding: 5px;
@@ -2402,7 +2403,7 @@ td select {
   align-items: center;
   gap: 16px;
   color: #6d835b;
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 13px;
   flex-wrap: wrap;
 }
@@ -2436,16 +2437,16 @@ td select {
 }
 .theme-findings strong {
   color: #687663;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
 }
 .theme-findings small {
-  font-size: 9px;
+  font-size: 12px;
   color: #74866b;
   white-space: nowrap;
 }
 .theme-findings .badge {
-  font-size: 8px;
+  font-size: 12px;
 }
 .insight-grid,
 .evidence-grid {
@@ -2471,10 +2472,10 @@ td select {
   margin-bottom: 23px;
 }
 .insight-card-top .quiet {
-  font-size: 10px;
+  font-size: 12px;
 }
 .insight-card-top .badge {
-  font-size: 8px;
+  font-size: 12px;
 }
 .insight-card h2 {
   font-size: 20px;
@@ -2483,7 +2484,7 @@ td select {
   margin-bottom: 12px;
 }
 .insight-card > p {
-  font-size: 12px;
+  font-size: 14px;
   color: #6c7a63;
   line-height: 1.9;
   display: -webkit-box;
@@ -2500,13 +2501,13 @@ td select {
   padding-top: 15px;
   border-top: 1px solid #eff1e9;
   color: #6b805c;
-  font-size: 10px;
+  font-size: 12px;
 }
 .insight-card-foot > svg {
   margin-left: auto;
 }
 .insight-card-foot .badge {
-  font-size: 8px;
+  font-size: 12px;
 }
 .evidence-grid .quote-card {
   height: calc(100% - 45px);
@@ -2515,7 +2516,7 @@ td select {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 9px;
+  font-size: 12px;
   color: #71865f;
   padding: 9px 0;
 }
@@ -2523,12 +2524,12 @@ td select {
   flex: 1;
 }
 .evidence-controls .btn {
-  font-size: 9px;
+  font-size: 12px;
   min-height: 25px;
   padding: 3px 6px;
 }
 .evidence-controls .badge {
-  font-size: 8px;
+  font-size: 12px;
 }
 .segment-table th {
   white-space: normal;
@@ -2540,7 +2541,7 @@ td select {
 }
 .segment-table th small {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   color: #788968;
   margin-top: 5px;
 }
@@ -2551,14 +2552,14 @@ td select {
   min-width: 60px;
   padding: 8px 11px;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 14px;
 }
 .comparison-cell.has-evidence {
   background: #edf2e4;
   color: #647d4f;
 }
 .comparison-cell small {
-  font-size: 8px;
+  font-size: 12px;
   margin-top: 4px;
 }
 .evidence-choices {
@@ -2569,7 +2570,7 @@ td select {
   overflow: auto;
 }
 .evidence-choices legend {
-  font-size: 11px;
+  font-size: 13px;
   padding: 0 5px;
 }
 .evidence-choices label {
@@ -2578,7 +2579,7 @@ td select {
   padding: 12px 0;
   border-bottom: 1px solid #eff1eb;
   color: #687f56;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.8;
 }
 .evidence-choices input {
@@ -2588,7 +2589,7 @@ td select {
 }
 .evidence-choices small {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   color: #6e835d;
   margin-top: 7px;
 }
@@ -2608,7 +2609,7 @@ td select {
   flex-wrap: wrap;
 }
 .insight-detail-meta .quiet {
-  font-size: 9px;
+  font-size: 12px;
 }
 .insight-main > h1 {
   font-size: 34px;
@@ -2618,7 +2619,7 @@ td select {
   margin-bottom: 23px;
 }
 .insight-lead {
-  font-size: 15px;
+  font-size: 16px;
   color: #67765f;
   line-height: 1.95;
   max-width: 810px;
@@ -2629,7 +2630,7 @@ td select {
   gap: 21px;
   margin: 23px 0 13px;
   color: #6f805e;
-  font-size: 10px;
+  font-size: 12px;
   flex-wrap: wrap;
 }
 .insight-evidence-summary > span {
@@ -2642,7 +2643,7 @@ td select {
   gap: 6px;
   align-items: center;
   color: #738566;
-  font-size: 9px;
+  font-size: 12px;
   border-bottom: 1px solid var(--line);
   padding-bottom: 24px;
   margin-bottom: 28px;
@@ -2656,10 +2657,10 @@ td select {
   height: calc(100% - 23px);
 }
 .support-grid blockquote {
-  font-size: 12px;
+  font-size: 14px;
 }
 .unlink-evidence {
-  font-size: 8px;
+  font-size: 12px;
   color: #74856a;
   border: 0;
   background: none;
@@ -2669,7 +2670,7 @@ td select {
   padding: 18px;
   border: 1px dashed #e2d9c6;
   border-radius: 6px;
-  font-size: 11px;
+  font-size: 13px;
   color: #8b7e65;
 }
 .limitations {
@@ -2686,11 +2687,11 @@ td select {
   color: #8c7e5b;
 }
 .limitations h2 {
-  font-size: 13px;
+  font-size: 15px;
   color: #786b51;
 }
 .limitations p {
-  font-size: 12px;
+  font-size: 14px;
   color: #80765f;
   line-height: 1.85;
   margin-top: 11px;
@@ -2712,12 +2713,12 @@ td select {
   min-width: 0;
 }
 .linked-opportunity strong {
-  font-size: 12px;
+  font-size: 14px;
   color: #60734f;
 }
 .linked-opportunity small {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   color: #6e835b;
   margin-top: 6px;
   line-height: 1.7;
@@ -2735,19 +2736,19 @@ td select {
   margin-bottom: 11px;
 }
 .review-panel > p {
-  font-size: 11px;
+  font-size: 13px;
   color: #6d7e5e;
   line-height: 1.8;
   margin-bottom: 18px;
 }
 .review-panel > .btn {
   width: 100%;
-  font-size: 11px;
+  font-size: 13px;
   margin-bottom: 9px;
 }
 .review-panel textarea {
   width: 100%;
-  font-size: 10px;
+  font-size: 12px;
   margin: 5px 0 12px;
 }
 .review-secondary {
@@ -2757,7 +2758,7 @@ td select {
   margin: 0 -5px 8px;
 }
 .review-secondary .btn {
-  font-size: 9px;
+  font-size: 12px;
   padding: 6px 5px;
   min-height: 27px;
 }
@@ -2767,7 +2768,7 @@ td select {
   margin: 9px 0 21px;
 }
 .trace-chain .eyebrow {
-  font-size: 8px;
+  font-size: 12px;
   color: #758961;
 }
 .trace-chain > button {
@@ -2791,7 +2792,7 @@ td select {
   background: #f0f3e8;
   color: #6e8859;
   font-family: Consolas, monospace;
-  font-size: 9px;
+  font-size: 12px;
   flex-shrink: 0;
   border-radius: 4px;
   position: relative;
@@ -2811,7 +2812,7 @@ td select {
 }
 .trace-chain strong {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   color: #657e51;
   font-weight: 500;
   line-height: 1.6;
@@ -2819,7 +2820,7 @@ td select {
 .trace-chain small {
   display: block;
   color: #72895d;
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 3px;
 }
 .trace-chain svg {
@@ -2827,31 +2828,31 @@ td select {
   margin-top: 3px;
 }
 .insight-context h3 {
-  font-size: 10px;
+  font-size: 12px;
   color: #657f51;
   font-weight: 500;
   margin: 20px 0 10px;
 }
 .insight-context > .badge {
-  font-size: 8px;
+  font-size: 12px;
   margin: 0 3px 5px 0;
 }
 .insight-context .text-link {
-  font-size: 11px;
+  font-size: 13px;
 }
 .insight-context > .btn {
   margin-top: 12px;
-  font-size: 9px;
+  font-size: 12px;
 }
 .review-history {
   padding: 9px 0;
   border-bottom: 1px solid #ebede7;
-  font-size: 10px;
+  font-size: 12px;
   color: #677e54;
 }
 .review-history small {
   display: block;
-  font-size: 8px;
+  font-size: 12px;
   color: #738561;
   margin-top: 3px;
   line-height: 1.8;
@@ -2870,7 +2871,7 @@ td select {
   gap: 7px;
   align-items: center;
   color: #718565;
-  font-size: 10px;
+  font-size: 12px;
   padding: 0 0 22px;
   line-height: 1.7;
 }
@@ -2894,11 +2895,11 @@ td select {
   padding: 16px 2px;
 }
 .kanban-heading h2 {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0;
 }
 .kanban-heading > span:nth-last-child(2) {
-  font-size: 9px;
+  font-size: 12px;
   color: #6f8660;
 }
 .kanban-heading .btn {
@@ -2935,18 +2936,18 @@ td select {
   border-color: #b8c4a7;
 }
 .opportunity-card .eyebrow {
-  font-size: 7px;
+  font-size: 12px;
   color: #708a5b;
   letter-spacing: 0.7px;
 }
 .opportunity-card h3 {
-  font-size: 13px;
+  font-size: 15px;
   color: #607255;
   line-height: 1.65;
   margin-top: 10px;
 }
 .opportunity-card > p {
-  font-size: 10px;
+  font-size: 12px;
   color: #728365;
   line-height: 1.85;
   margin-top: 10px;
@@ -2960,7 +2961,7 @@ td select {
   align-items: center;
   gap: 5px;
   margin-top: 15px;
-  font-size: 9px;
+  font-size: 12px;
   color: #6a8456;
 }
 .opportunity-card-foot {
@@ -2972,7 +2973,7 @@ td select {
   padding-top: 11px;
   margin-top: 13px;
   color: #738b5d;
-  font-size: 8px;
+  font-size: 12px;
 }
 .opportunity-card-foot strong {
   color: #607e48;
@@ -2981,13 +2982,13 @@ td select {
   margin-left: auto;
 }
 .opportunity-card-foot small {
-  font-size: 7px;
+  font-size: 12px;
 }
 .kanban-empty {
   padding: 27px 5px;
   border: 1px dashed #dde3d2;
   text-align: center;
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.9;
   color: #748860;
   border-radius: 6px;
@@ -3001,12 +3002,12 @@ td select {
   margin: 21px 0;
 }
 .opportunity-detail h3 {
-  font-size: 11px;
+  font-size: 13px;
   color: #677f53;
   margin: 19px 0 7px;
 }
 .opportunity-detail p {
-  font-size: 12px;
+  font-size: 14px;
   color: #687c57;
   line-height: 1.85;
   white-space: pre-line;
@@ -3019,7 +3020,7 @@ td select {
   color: #6a8356;
 }
 .opportunity-score small {
-  font-size: 9px;
+  font-size: 12px;
 }
 .opportunity-score strong {
   font-size: 29px;
@@ -3037,7 +3038,7 @@ td select {
   flex-direction: column;
   padding: 13px;
   text-align: center;
-  font-size: 9px;
+  font-size: 12px;
   color: #728961;
   border-right: 1px solid var(--line);
 }
@@ -3054,7 +3055,7 @@ td select {
   margin-top: 20px;
 }
 .opportunity-source > .text-link {
-  font-size: 12px;
+  font-size: 14px;
   display: block;
   margin-bottom: 7px;
 }
@@ -3070,18 +3071,18 @@ td select {
 }
 .warning-text {
   color: #94733f !important;
-  font-size: 10px !important;
+  font-size: 12px !important;
   margin: 8px 0 13px !important;
 }
 .linked-insight-choices legend {
-  font-size: 11px;
+  font-size: 13px;
 }
 .linked-insight-choices .inline-check {
   margin: 12px 0;
   line-height: 1.8;
 }
 .linked-insight-choices .badge {
-  font-size: 8px;
+  font-size: 12px;
 }
 .ask-workspace {
   max-width: 850px;
@@ -3095,7 +3096,7 @@ td select {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 10px;
+  font-size: 12px;
   color: #698252;
   padding: 14px 20px;
   border-bottom: 1px solid #edf0e7;
@@ -3123,7 +3124,7 @@ td select {
   margin-bottom: 11px;
 }
 .ask-empty > p {
-  font-size: 12px;
+  font-size: 14px;
   color: #6a8057;
 }
 .ask-prompts {
@@ -3143,7 +3144,7 @@ td select {
   background: #fff;
   text-align: left;
   padding: 17px;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.8;
   color: #64804e;
 }
@@ -3151,7 +3152,7 @@ td select {
   background: #f5f8ed;
 }
 .ask-empty > small {
-  font-size: 9px;
+  font-size: 12px;
   color: #748b60;
 }
 .ask-composer {
@@ -3173,7 +3174,7 @@ td select {
   flex: 1;
   min-width: 0;
   resize: none;
-  font-size: 12px;
+  font-size: 14px;
   color: #647c50;
   padding: 3px 0;
 }
@@ -3185,7 +3186,7 @@ td select {
 .ask-composer > small {
   display: block;
   width: 100%;
-  font-size: 8px;
+  font-size: 12px;
   color: #758962;
   margin-top: 3px;
 }
@@ -3202,7 +3203,7 @@ td select {
   margin-bottom: 22px;
 }
 .user-question h3 {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
   color: #647a51;
 }
@@ -3230,22 +3231,22 @@ td select {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: #608048;
   margin: 3px 0 13px;
 }
 .answer-heading .badge {
   letter-spacing: 0;
-  font-size: 8px;
+  font-size: 12px;
 }
 .trace-answer > div > p {
-  font-size: 11px;
+  font-size: 13px;
   color: #6a7f58;
   line-height: 1.9;
 }
 .trace-answer h3 {
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 9px;
   color: #618047;
 }
@@ -3253,16 +3254,16 @@ td select {
   margin: 25px 0;
 }
 .answer-finding > .text-link {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   margin-bottom: 9px;
 }
 .answer-finding > .badge {
-  font-size: 8px;
+  font-size: 12px;
   margin-left: 8px;
 }
 .answer-finding > p {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.9;
   color: #71845e;
   margin: 10px 0 15px;
@@ -3275,21 +3276,21 @@ td select {
   gap: 6px;
   align-items: center;
   color: #927344;
-  font-size: 9px;
+  font-size: 12px;
   border: 0;
   background: transparent;
   text-align: left;
   padding: 9px 0;
 }
 .answer-limitations {
-  font-size: 10px !important;
+  font-size: 12px !important;
   color: #73845c !important;
 }
 .answer-footer {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 8px;
+  font-size: 12px;
   color: #748b60;
   border-top: 1px solid #eef2e7;
   padding-top: 12px;
@@ -3300,7 +3301,7 @@ td select {
   gap: 8px;
   align-items: center;
   color: #698054;
-  font-size: 11px;
+  font-size: 13px;
   padding: 20px 30px;
 }
 .report-grid {
@@ -3330,7 +3331,7 @@ td select {
   margin-bottom: 25px;
 }
 .report-card .eyebrow {
-  font-size: 8px;
+  font-size: 12px;
   color: #68864f;
 }
 .report-card h2 {
@@ -3340,7 +3341,7 @@ td select {
   color: #657b53;
 }
 .report-card p {
-  font-size: 10px;
+  font-size: 12px;
   color: #6b8357;
 }
 .report-card-foot {
@@ -3350,7 +3351,7 @@ td select {
   border-top: 1px solid #edf0e6;
   margin-top: 23px;
   padding-top: 16px;
-  font-size: 9px;
+  font-size: 12px;
   color: #70895a;
   gap: 10px;
 }
@@ -3366,7 +3367,7 @@ td select {
   border: 0;
 }
 .report-toolbar .quiet {
-  font-size: 9px;
+  font-size: 12px;
 }
 .report-paper {
   max-width: 850px;
@@ -3381,7 +3382,7 @@ td select {
   justify-content: space-between;
   gap: 15px;
   color: #6b8755;
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 1px;
   padding-bottom: 25px;
   border-bottom: 1px solid #eaf0e0;
@@ -3395,7 +3396,7 @@ td select {
   letter-spacing: -0.5px;
 }
 .markdown-preview > h2 {
-  font-size: 17px;
+  font-size: 18px;
   color: #6b825b;
   letter-spacing: -0.2px;
   margin: 33px 0 15px;
@@ -3403,13 +3404,13 @@ td select {
   padding-top: 20px;
 }
 .markdown-preview > h3 {
-  font-size: 13px;
+  font-size: 15px;
   color: #657e50;
   line-height: 1.8;
   margin: 24px 0 11px;
 }
 .markdown-preview > p {
-  font-size: 11px;
+  font-size: 13px;
   color: #687e55;
   line-height: 1.95;
   margin: 12px 0;
@@ -3417,20 +3418,20 @@ td select {
 }
 .markdown-preview > p > strong {
   color: #8a6b41;
-  font-size: 10px;
+  font-size: 12px;
 }
 .markdown-preview > blockquote {
   border-left: 2px solid #abbc94;
   padding: 13px 17px;
   margin: 17px 0;
   background: #f7f9f1;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.9;
   color: #617b4b;
 }
 .markdown-preview > p.md-list {
   margin: 4px 0;
-  font-size: 10px;
+  font-size: 12px;
 }
 .report-editor {
   background: var(--paper);
@@ -3458,16 +3459,16 @@ td select {
   flex: 1;
 }
 .quality-banner strong {
-  font-size: 12px;
+  font-size: 14px;
   color: #56763f;
 }
 .quality-banner p {
-  font-size: 11px;
+  font-size: 13px;
   color: #657f51;
   margin-top: 5px;
 }
 .quality-banner .badge {
-  font-size: 9px;
+  font-size: 12px;
 }
 .quality-grid {
   display: grid;
@@ -3485,7 +3486,7 @@ td select {
   display: flex;
   gap: 10px;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 12px;
   color: #647d51;
   margin-bottom: 17px;
 }
@@ -3500,12 +3501,12 @@ td select {
   color: #5c7b46;
 }
 .quality-denominator {
-  font-size: 9px;
+  font-size: 12px;
   color: #6b8456;
   margin: 9px 0;
 }
 .quality-metric p {
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.9;
   color: #71865e;
 }
@@ -3517,16 +3518,16 @@ td select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 13px;
   color: #678050;
   gap: 10px;
 }
 .validation-run p {
-  font-size: 10px !important;
+  font-size: 12px !important;
   margin: 7px 0 !important;
 }
 .validation-run > small {
-  font-size: 9px;
+  font-size: 12px;
   color: #748763;
 }
 .settings-grid {
@@ -3541,14 +3542,14 @@ td select {
   gap: 12px;
   padding: 14px 0;
   border-bottom: 1px solid #eef1e6;
-  font-size: 11px;
+  font-size: 13px;
   color: #658050;
 }
 .setting-row > span:first-child {
   color: #738762;
 }
 .setting-row kbd {
-  font-size: 9px;
+  font-size: 12px;
   border: 1px solid #e1e7d7;
   border-radius: 4px;
   background: #f5f7ef;
@@ -3571,7 +3572,7 @@ td select {
   color: #5d754d;
 }
 .welcome > p {
-  font-size: 15px;
+  font-size: 16px;
   color: #678053;
   line-height: 1.9;
   max-width: 590px;
@@ -3584,7 +3585,7 @@ td select {
   margin: 30px 0;
 }
 .welcome-principle {
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 2px;
   color: #6d8855;
   margin-top: 60px;
@@ -3633,10 +3634,10 @@ td select {
     padding: 17px 16px;
   }
   .metric > small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .metric > div {
-    font-size: 10px;
+    font-size: 12px;
   }
   .study-feature {
     padding: 22px;
@@ -3680,14 +3681,14 @@ td select {
     grid-template-columns: repeat(3, 1fr);
   }
   .head-actions .btn {
-    font-size: 10px;
+    font-size: 12px;
     padding: 8px 10px;
   }
   .theme-feature {
     padding: 17px;
   }
   .theme-feature h3 {
-    font-size: 14px;
+    font-size: 16px;
   }
   .coverage-panel {
     padding: 22px;
@@ -3709,7 +3710,7 @@ td select {
     width: calc(100% - 190px);
   }
   .sidebar nav button {
-    font-size: 10px;
+    font-size: 12px;
     gap: 8px;
     padding: 10px;
   }
@@ -3717,7 +3718,7 @@ td select {
     font-size: 27px;
   }
   .workspace-switch {
-    font-size: 10px;
+    font-size: 12px;
   }
   .main-content {
     padding: 28px 22px;
@@ -3732,7 +3733,7 @@ td select {
     font-size: 26px;
   }
   .metric > small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .metric > div svg {
     display: none;
@@ -3745,23 +3746,23 @@ td select {
     font-size: 20px;
   }
   .study-feature h2 > span {
-    font-size: 16px;
+    font-size: 18px;
   }
   .study-feature-top .quiet {
-    font-size: 8px;
+    font-size: 12px;
   }
   .avatar-stack small {
     display: none;
   }
   .theme-feature h3 {
-    font-size: 12px;
+    font-size: 14px;
   }
   .theme-feature > p {
-    font-size: 10px;
+    font-size: 12px;
     min-height: 47px;
   }
   .theme-feature .badge {
-    font-size: 8px;
+    font-size: 12px;
   }
   .overview-bottom {
     gap: 16px;
@@ -3770,7 +3771,7 @@ td select {
     padding: 17px;
   }
   .finding-row strong {
-    font-size: 10px;
+    font-size: 12px;
   }
   .activity-row small {
     max-width: 190px;
@@ -3779,7 +3780,7 @@ td select {
     font-size: 27px;
   }
   .page-head p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .reader-layout {
     grid-template-columns: minmax(0, 1fr) 230px;
@@ -3798,7 +3799,7 @@ td select {
     font-size: 28px;
   }
   .insight-lead {
-    font-size: 13px;
+    font-size: 15px;
   }
   .kanban {
     grid-template-columns: repeat(2, 1fr);
@@ -3820,7 +3821,7 @@ td select {
     justify-content: flex-end;
   }
   .topbar-right .badge {
-    font-size: 8px;
+    font-size: 12px;
   }
   .theme-findings {
     padding-left: 30px;
@@ -3829,7 +3830,7 @@ td select {
     display: none;
   }
   .insight-card h2 {
-    font-size: 17px;
+    font-size: 18px;
   }
   .filter-bar {
     gap: 8px;
@@ -3851,7 +3852,7 @@ td select {
 @media (max-width: 860px) {
   .sidebar {
     transform: translateX(-100%);
-    width: 228px;
+    width: 252px;
     transition: transform 0.2s;
   }
   .sidebar.open {
@@ -3888,12 +3889,12 @@ td select {
     max-width: 270px;
   }
   .sidebar nav button {
-    font-size: 12px;
+    font-size: 14px;
     gap: 11px;
     padding: 11px;
   }
   .workspace-switch {
-    font-size: 11px;
+    font-size: 13px;
   }
   .main-content {
     padding: 30px 25px;
@@ -3902,20 +3903,20 @@ td select {
     font-size: 29px;
   }
   .theme-feature h3 {
-    font-size: 14px;
+    font-size: 16px;
   }
   .theme-feature > p {
-    font-size: 10px;
+    font-size: 12px;
     min-height: 40px;
   }
   .theme-feature .badge {
-    font-size: 8px;
+    font-size: 12px;
   }
   .metric > div {
-    font-size: 11px;
+    font-size: 13px;
   }
   .metric > small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .reader-layout {
     grid-template-columns: minmax(0, 1fr) 245px;
@@ -3924,7 +3925,7 @@ td select {
     padding: 25px;
   }
   .overview-bottom .finding-row strong {
-    font-size: 10px;
+    font-size: 12px;
   }
   .activity-row small {
     max-width: 220px;
@@ -3942,10 +3943,10 @@ td select {
     font-size: 31px;
   }
   .quality-metric p {
-    font-size: 10px;
+    font-size: 12px;
   }
   .settings-grid p {
-    font-size: 11px;
+    font-size: 13px;
   }
 }
 @media (max-width: 640px) {
@@ -3960,7 +3961,7 @@ td select {
     gap: 9px;
   }
   .topbar-right .badge {
-    font-size: 8px;
+    font-size: 12px;
     padding: 3px 5px;
   }
   .topbar-right .avatar,
@@ -3969,7 +3970,7 @@ td select {
   }
   .project-select select {
     max-width: 180px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .main-content {
     padding: 26px 18px 25px;
@@ -3981,14 +3982,14 @@ td select {
     margin-bottom: 24px;
   }
   .page-head .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 1.2px;
   }
   .page-head h1 {
     font-size: 28px;
   }
   .page-head p {
-    font-size: 11px;
+    font-size: 13px;
     margin-top: 9px;
   }
   .head-actions {
@@ -3997,7 +3998,7 @@ td select {
     gap: 8px;
   }
   .head-actions .btn {
-    font-size: 11px;
+    font-size: 13px;
     min-height: 36px;
   }
   .metrics {
@@ -4032,13 +4033,13 @@ td select {
     max-width: 90px;
   }
   .metric > div {
-    font-size: 10px;
+    font-size: 12px;
   }
   .metric > strong {
     font-size: 29px !important;
   }
   .metric > small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .overview-grid {
     grid-template-columns: 1fr;
@@ -4055,26 +4056,26 @@ td select {
     font-size: 19px;
   }
   .study-feature > p {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1.9;
   }
   .study-feature-top .quiet {
-    font-size: 8px;
+    font-size: 12px;
   }
   .study-feature-bottom {
     gap: 13px;
   }
   .study-feature-bottom .btn {
-    font-size: 11px;
+    font-size: 13px;
   }
   .coverage-panel {
     padding: 21px;
   }
   .coverage-panel > p {
-    font-size: 10px;
+    font-size: 12px;
   }
   .coverage-list > button > div:first-child {
-    font-size: 11px;
+    font-size: 13px;
   }
   .coverage-list {
     margin-top: 21px;
@@ -4083,7 +4084,7 @@ td select {
     margin-bottom: 15px;
   }
   .coverage-caution {
-    font-size: 9px;
+    font-size: 12px;
   }
   .theme-overview {
     grid-template-columns: 1fr;
@@ -4093,21 +4094,21 @@ td select {
     padding: 19px 21px;
   }
   .theme-feature h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
   .theme-feature-top {
     margin-bottom: 13px;
   }
   .theme-feature > p {
-    font-size: 11px;
+    font-size: 13px;
     min-height: 0;
   }
   .theme-feature-foot {
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 17px;
   }
   .theme-feature .badge {
-    font-size: 9px;
+    font-size: 12px;
   }
   .overview-bottom {
     grid-template-columns: 1fr;
@@ -4117,24 +4118,24 @@ td select {
     padding: 20px;
   }
   .overview-bottom .finding-row strong {
-    font-size: 11px;
+    font-size: 13px;
   }
   .finding-row small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .activity-row small {
     max-width: 250px;
   }
   .activity-row strong {
-    font-size: 11px;
+    font-size: 13px;
   }
   .activity-row time {
-    font-size: 9px;
+    font-size: 12px;
   }
   .evidence-principle {
     flex-wrap: wrap;
     padding: 15px;
-    font-size: 10px;
+    font-size: 12px;
     gap: 9px;
   }
   .evidence-principle > span {
@@ -4143,7 +4144,7 @@ td select {
     line-height: 1.8;
   }
   .evidence-principle .btn {
-    font-size: 10px;
+    font-size: 12px;
     margin-left: 26px;
   }
   .section-heading {
@@ -4151,19 +4152,19 @@ td select {
     gap: 12px;
   }
   .section-heading h2 {
-    font-size: 17px;
+    font-size: 18px;
   }
   .section-heading .eyebrow {
-    font-size: 7px;
+    font-size: 12px;
   }
   .section-heading .btn {
-    font-size: 10px;
+    font-size: 12px;
     min-height: 30px;
     padding: 5px;
   }
   .app-footer {
     padding: 15px 18px;
-    font-size: 8px;
+    font-size: 12px;
   }
   .project-grid,
   .two-column,
@@ -4180,10 +4181,10 @@ td select {
     font-size: 21px;
   }
   .project-card p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .project-meta {
-    font-size: 10px;
+    font-size: 12px;
     gap: 15px;
   }
   .filter-bar {
@@ -4202,26 +4203,26 @@ td select {
     flex: 1;
     min-width: 140px;
     max-width: none;
-    font-size: 10px;
+    font-size: 12px;
     padding: 9px;
   }
   .filter-bar .inline-check {
-    font-size: 10px;
+    font-size: 12px;
   }
   .table-meta {
-    font-size: 9px;
+    font-size: 12px;
     gap: 10px;
     line-height: 1.7;
   }
   table {
-    font-size: 10px;
+    font-size: 12px;
   }
   td,
   th {
     padding: 13px 14px;
   }
   .study-detail-banner {
-    font-size: 10px;
+    font-size: 12px;
     gap: 12px;
     padding: 14px;
   }
@@ -4229,11 +4230,11 @@ td select {
     padding: 22px;
   }
   .paper-section > h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
   .paper-section p,
   .question-list {
-    font-size: 11px;
+    font-size: 13px;
   }
   .dialog-body {
     padding: 20px;
@@ -4242,7 +4243,7 @@ td select {
     padding: 15px 18px;
   }
   .dialog > header h2 {
-    font-size: 14px;
+    font-size: 16px;
   }
   .form-grid {
     grid-template-columns: 1fr;
@@ -4252,24 +4253,24 @@ td select {
     gap: 8px;
   }
   .form-grid.three .field span {
-    font-size: 9px;
+    font-size: 12px;
   }
   .form-grid.three select {
-    font-size: 11px;
+    font-size: 13px;
   }
   .form-actions > .quiet {
     width: 100%;
-    font-size: 9px;
+    font-size: 12px;
     margin-bottom: 7px;
   }
   .import-intro {
     gap: 10px;
   }
   .import-intro strong {
-    font-size: 12px;
+    font-size: 14px;
   }
   .import-intro p {
-    font-size: 10px;
+    font-size: 12px;
   }
   .upload-zone {
     min-height: 112px;
@@ -4288,7 +4289,7 @@ td select {
   }
   .reader-meta {
     gap: 8px;
-    font-size: 9px;
+    font-size: 12px;
   }
   .reader-layout {
     display: flex;
@@ -4302,12 +4303,12 @@ td select {
     padding: 20px 18px;
   }
   .transcript-segment > p {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.95;
   }
   .save-passage {
     opacity: 1;
-    font-size: 8px;
+    font-size: 12px;
     padding: 3px;
   }
   .findings-panel {
@@ -4319,45 +4320,45 @@ td select {
     background: #fcfcf9;
   }
   .connected-insight h3 {
-    font-size: 15px;
+    font-size: 16px;
   }
   .connected-insight p {
-    font-size: 12px;
+    font-size: 14px;
     -webkit-line-clamp: unset;
   }
   .findings-panel .quote-card.compact blockquote {
-    font-size: 12px;
+    font-size: 14px;
   }
   .findings-panel .quote-card.compact .quote-label {
-    font-size: 8px;
+    font-size: 12px;
   }
   .tag-list .badge {
-    font-size: 10px;
+    font-size: 12px;
   }
   .reader-note {
-    font-size: 11px;
+    font-size: 13px;
   }
   .reader-section-label {
-    font-size: 9px;
+    font-size: 12px;
   }
   .reader-validation {
     margin-top: 16px;
   }
   .reader-validation p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .reader-validation small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .selection-toolbar {
     width: calc(100% - 24px);
     gap: 7px;
-    font-size: 9px;
+    font-size: 12px;
     padding: 9px 11px;
     bottom: 16px;
   }
   .selection-toolbar .btn {
-    font-size: 9px;
+    font-size: 12px;
     padding: 6px 8px;
     min-height: 29px;
   }
@@ -4368,7 +4369,7 @@ td select {
     gap: 20px;
   }
   .tabs > button {
-    font-size: 10px;
+    font-size: 12px;
     min-height: 43px;
   }
   .theme-row-heading {
@@ -4379,10 +4380,10 @@ td select {
     font-size: 19px;
   }
   .theme-row-heading p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .theme-row-heading .theme-index {
-    font-size: 11px;
+    font-size: 13px;
   }
   .theme-findings {
     padding: 0 18px;
@@ -4394,7 +4395,7 @@ td select {
     padding: 17px 0;
   }
   .theme-findings strong {
-    font-size: 11px;
+    font-size: 13px;
   }
   .theme-findings > button > span:last-child {
     padding-left: 25px;
@@ -4406,7 +4407,7 @@ td select {
   }
   .inline-meta {
     gap: 10px;
-    font-size: 9px;
+    font-size: 12px;
   }
   .insight-card {
     padding: 20px;
@@ -4415,32 +4416,32 @@ td select {
     font-size: 20px;
   }
   .insight-card > p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .insight-card-top > .quiet {
-    font-size: 9px;
+    font-size: 12px;
   }
   .insight-card-top .badge {
-    font-size: 8px;
+    font-size: 12px;
   }
   .evidence-grid .quote-card {
     height: auto;
   }
   .evidence-controls {
-    font-size: 9px;
+    font-size: 12px;
   }
   .quote-card {
     padding: 18px;
   }
   .quote-card blockquote {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.9;
   }
   .quote-attribution small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .quote-label {
-    font-size: 8px;
+    font-size: 12px;
   }
   .insight-detail {
     display: flex;
@@ -4452,21 +4453,21 @@ td select {
     line-height: 1.45;
   }
   .insight-lead {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.9;
   }
   .insight-evidence-summary {
     gap: 12px;
-    font-size: 9px;
+    font-size: 12px;
   }
   .interpretation-label {
-    font-size: 8px;
+    font-size: 12px;
   }
   .insight-main .section-heading {
     flex-wrap: wrap;
   }
   .insight-main .section-heading > .quiet {
-    font-size: 9px;
+    font-size: 12px;
   }
   .support-grid {
     grid-template-columns: 1fr;
@@ -4475,17 +4476,17 @@ td select {
     height: auto;
   }
   .support-grid blockquote {
-    font-size: 13px;
+    font-size: 15px;
   }
   .limitations {
     padding: 18px;
   }
   .limitations h2 {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.8;
   }
   .limitations p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .linked-opportunity {
     gap: 9px;
@@ -4493,10 +4494,10 @@ td select {
     flex-wrap: wrap;
   }
   .linked-opportunity strong {
-    font-size: 11px;
+    font-size: 13px;
   }
   .linked-opportunity small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .insight-aside {
     display: flex;
@@ -4506,30 +4507,30 @@ td select {
     padding: 22px;
   }
   .review-panel p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .review-panel .btn {
-    font-size: 12px;
+    font-size: 14px;
     min-height: 38px;
   }
   .review-panel textarea {
-    font-size: 12px;
+    font-size: 14px;
   }
   .review-secondary .btn {
-    font-size: 10px;
+    font-size: 12px;
     min-height: 32px;
   }
   .trace-chain {
     padding: 24px 12px;
   }
   .trace-chain .eyebrow {
-    font-size: 9px;
+    font-size: 12px;
   }
   .trace-chain strong {
-    font-size: 11px;
+    font-size: 13px;
   }
   .trace-chain small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .trace-chain > button {
     padding: 14px 0;
@@ -4541,16 +4542,16 @@ td select {
     padding: 0 12px;
   }
   .insight-context h3 {
-    font-size: 12px;
+    font-size: 14px;
   }
   .review-history {
-    font-size: 11px;
+    font-size: 13px;
   }
   .review-history small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .insight-context .badge {
-    font-size: 9px;
+    font-size: 12px;
   }
   .kanban {
     grid-template-columns: 1fr;
@@ -4561,32 +4562,32 @@ td select {
     min-height: 140px;
   }
   .kanban-heading h2 {
-    font-size: 13px;
+    font-size: 15px;
   }
   .opportunity-card {
     padding: 20px 18px;
   }
   .opportunity-card h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
   .opportunity-card p {
-    font-size: 11px;
+    font-size: 13px;
     -webkit-line-clamp: 4;
   }
   .opportunity-card .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
   }
   .opportunity-card-foot {
-    font-size: 10px;
+    font-size: 12px;
   }
   .opportunity-card-foot small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .opportunity-evidence {
-    font-size: 10px;
+    font-size: 12px;
   }
   .priority-explanation {
-    font-size: 9px;
+    font-size: 12px;
     align-items: flex-start;
   }
   .priority-explanation > svg {
@@ -4602,10 +4603,10 @@ td select {
     font-size: 25px;
   }
   .opportunity-detail p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .opportunity-detail h3 {
-    font-size: 11px;
+    font-size: 13px;
   }
   .ask-empty {
     padding: 30px 21px;
@@ -4615,7 +4616,7 @@ td select {
     line-height: 1.5;
   }
   .ask-empty p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .ask-prompts {
     grid-template-columns: 1fr;
@@ -4624,16 +4625,16 @@ td select {
   }
   .ask-prompts > button {
     padding: 14px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .ask-empty > small {
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.8;
     display: block;
   }
   .ask-mode {
     padding: 13px 16px;
-    font-size: 9px;
+    font-size: 12px;
     align-items: flex-start;
   }
   .ask-mode svg {
@@ -4644,17 +4645,17 @@ td select {
     padding: 12px;
   }
   .ask-composer > textarea {
-    font-size: 11px;
+    font-size: 13px;
   }
   .ask-composer > small {
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.8;
   }
   .ask-messages {
     padding: 24px 17px;
   }
   .user-question h3 {
-    font-size: 12px;
+    font-size: 14px;
   }
   .trace-answer {
     gap: 8px;
@@ -4664,20 +4665,20 @@ td select {
     height: 24px;
   }
   .answer-finding > .text-link {
-    font-size: 12px;
+    font-size: 14px;
   }
   .answer-finding > .badge {
     margin-left: 0;
     display: inline-flex;
   }
   .answer-finding > p {
-    font-size: 10px;
+    font-size: 12px;
   }
   .answer-finding .quote-card.compact blockquote {
-    font-size: 11px;
+    font-size: 13px;
   }
   .answer-footer {
-    font-size: 8px;
+    font-size: 12px;
     align-items: flex-start;
   }
   .report-toolbar {
@@ -4690,22 +4691,22 @@ td select {
     padding: 25px 21px;
   }
   .report-brand {
-    font-size: 8px;
+    font-size: 12px;
   }
   .markdown-preview > h1 {
     font-size: 24px;
   }
   .markdown-preview > h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
   .markdown-preview > h3 {
-    font-size: 12px;
+    font-size: 14px;
   }
   .markdown-preview > p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .markdown-preview > blockquote {
-    font-size: 12px;
+    font-size: 14px;
   }
   .quality-banner {
     padding: 17px;
@@ -4716,12 +4717,12 @@ td select {
     min-width: 210px;
   }
   .quality-banner p {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.9;
   }
   .quality-banner .badge {
     margin-left: 35px;
-    font-size: 9px;
+    font-size: 12px;
   }
   .quality-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4731,7 +4732,7 @@ td select {
     padding: 16px;
   }
   .quality-metric-title {
-    font-size: 9px;
+    font-size: 12px;
     gap: 6px;
     line-height: 1.8;
     margin-bottom: 12px;
@@ -4744,18 +4745,18 @@ td select {
     font-size: 28px;
   }
   .quality-denominator {
-    font-size: 9px;
+    font-size: 12px;
     line-height: 1.7;
   }
   .quality-metric p {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.8;
   }
   .setting-row {
-    font-size: 10px;
+    font-size: 12px;
   }
   .settings-grid p {
-    font-size: 11px;
+    font-size: 13px;
   }
   .welcome {
     padding: 35px 4px;
@@ -4764,16 +4765,16 @@ td select {
     font-size: 37px;
   }
   .welcome > p {
-    font-size: 13px;
+    font-size: 15px;
   }
   .welcome-actions .btn {
-    font-size: 11px;
+    font-size: 13px;
   }
   .welcome-principle {
-    font-size: 9px;
+    font-size: 12px;
   }
   .toast {
-    font-size: 11px;
+    font-size: 13px;
     padding: 12px 14px;
     bottom: 18px;
     gap: 8px;
@@ -4781,17 +4782,17 @@ td select {
   }
   .saving-indicator {
     top: 63px;
-    font-size: 9px;
+    font-size: 12px;
   }
   .command-results strong {
-    font-size: 11px;
+    font-size: 13px;
     max-width: 270px;
   }
   .command-footer {
-    font-size: 9px;
+    font-size: 12px;
   }
   .search-input.large input {
-    font-size: 12px;
+    font-size: 14px;
   }
   .startup {
     margin: 10vh auto;

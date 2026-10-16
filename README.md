@@ -10,13 +10,13 @@ An evidence-first qualitative research workspace for UX researchers, product man
 
 ## Try the defining workflow
 
-1. Load the synthetic workspace on first launch.
-2. Open **Fintech Onboarding → Explore findings**.
-3. Open **Users feel uncertain about identity verification.**
-4. Read the supporting and contradictory excerpts. Click a quote to open its highlighted original transcript segment.
-5. Return to the finding, edit the interpretation, and verify it after review.
-6. Create **Improve verification transparency and progress feedback**, add a hypothesis and validation plan, and move it through the opportunity board.
-7. Generate a report. Edit the narrative and export Markdown with its source appendix, or use the browser print/PDF workflow.
+1. Select **Try the example study** on first launch, then **Start walkthrough** on the overview.
+2. **Read the source.** Open the highlighted original quote and inspect the surrounding conversation. Select **Continue to review** beside the passage.
+3. **Review the finding.** Compare supporting and contradictory excerpts, edit or flag the interpretation if needed, then verify it after review.
+4. **Create an opportunity.** Turn the reviewed finding into a hypothesis and add a validation plan before saving.
+5. Finish the walkthrough to return to your review queue. Generate a report from **Reports**, then edit and export Markdown or print to PDF.
+
+The three-step walkthrough follows actual source navigation and saved research states. Progress survives reloads in the same browser. You can exit at any time; completed walkthroughs give way to the regular review queue and can be replayed. The overview keeps detailed analysis in its dedicated views instead of duplicating charts and activity feeds. Reading text is 15–17 px, with secondary labels at least 12 px on screen.
 
 Changes persist in the database across reloads. Editing an interpretation or its source links returns it to review.
 
@@ -32,7 +32,7 @@ npm run db:migrate
 npm run dev
 ```
 
-Open **http://127.0.0.1:5173**, then select **Load synthetic workspace**. To seed from another terminal while the app is running:
+Open **http://127.0.0.1:5173**, then select **Try the example study**. To seed from another terminal while the app is running:
 
 ```sh
 npm run db:seed
@@ -53,19 +53,19 @@ On restricted Windows environments, the included Babel configuration and narrow 
 
 ## Working capabilities
 
-| Workspace area | Implemented behavior |
-|---|---|
-| Overview | Database-derived counts, analysis coverage, interview-segment distributions, themes and action history |
-| Studies | Create, edit, open, archive and restore, with research objectives and methodology |
-| Interviews | Paste or upload TXT/MD/CSV, validate batches, detect duplicate transcripts, preserve source segments and offsets |
-| Transcript reader | Search, exact source highlighting, quotation selection, full-response saving, metadata/tags/notes editing |
-| Evidence | Literal quotation checks, manual classification and theme linking, source deep links |
+| Workspace area    | Implemented behavior                                                                                                                                                                            |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Overview          | Guided source-to-opportunity walkthrough, actionable review queue, compact study snapshot and expandable research objective                                                                     |
+| Studies           | Create, edit, open, archive and restore, with research objectives and methodology                                                                                                               |
+| Interviews        | Paste or upload TXT/MD/CSV, validate batches, detect duplicate transcripts, preserve source segments and offsets                                                                                |
+| Transcript reader | Search, exact source highlighting, quotation selection, full-response saving, metadata/tags/notes editing                                                                                       |
+| Evidence          | Literal quotation checks, manual classification and theme linking, source deep links                                                                                                            |
 | Themes & insights | Theme/library/evidence/comparison views, search and filters, sourced insight creation, editing, verification, rejection, weak-claim flagging, evidence attachment/removal and duplicate merging |
-| Opportunity board | Kanban and table views, drag/drop or status menu, create/edit, filters, estimated prioritization, linked insights and their sources |
-| Ask TRACE | Local keyword retrieval over stored findings with quotes, limitations, counter-evidence notices and insufficient-evidence responses |
-| Reports | Verified-finding report generation, Markdown editing/export, human-readable source appendix and print styles |
-| Quality | Computed citation/exactness checks, annotated demo consistency metrics, reference-case inspection and run history |
-| Settings | Transparent mode/data information, keyboard help and archival JSON export |
+| Opportunity board | Kanban and table views, drag/drop or status menu, create/edit, filters, estimated prioritization, linked insights and their sources                                                             |
+| Ask TRACE         | Local keyword retrieval over stored findings with quotes, limitations, counter-evidence notices and insufficient-evidence responses                                                             |
+| Reports           | Verified-finding report generation, Markdown editing/export, human-readable source appendix and print styles                                                                                    |
+| Quality           | Computed citation/exactness checks, annotated demo consistency metrics, reference-case inspection and run history                                                                               |
+| Settings          | Transparent mode/data information, keyboard help and archival JSON export                                                                                                                       |
 
 Research data stays in the local/private database. Every quote is addressable; every new opportunity link requires a verified insight. Qualitative interview counts always retain their sample context.
 

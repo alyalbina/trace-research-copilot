@@ -46,6 +46,10 @@ The final report includes verified findings, contradictory evidence, limitations
 
 **A restrained visual system.** A dark navigation rail, warm neutral canvas, compact metadata and quiet green evidence surfaces distinguish navigation, interpretation and primary material. Responsive layouts move the transcript's contextual panel below the reader on small screens; opportunity status menus remain available alongside drag and drop.
 
+**An overview that points to work.** The home screen prioritizes a first-use walkthrough and findings awaiting review. A compact study snapshot replaces the previous five-counter strip, coverage chart, theme gallery and activity feed. Reading surfaces use 15–17 px text and secondary labels stay at least 12 px. These are design changes, not measured usability improvements.
+
+**Guidance that survives navigation.** The walkthrough accompanies the researcher from a finding to its highlighted source, back to the review controls and into opportunity creation. It progresses from source navigation and saved domain states, persists in the same browser, and can be exited. Completing it removes the introductory hero on later visits while preserving a replay action.
+
 ## Engineering and reliability
 
 The app uses React, TypeScript, Next.js, a normalized SQLite schema and Zod validation. A shared action layer handles ingestion, exact-source checks, review transitions, linking and reports. The local database adapter uses Node SQLite; the hosted Worker adapter uses D1. Drizzle migrations define fourteen related tables.
